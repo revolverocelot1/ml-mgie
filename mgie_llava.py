@@ -213,7 +213,7 @@ class LlavaLlamaForCausalLM(LlamaForCausalLM):
 
         self.edit_head = EditMapper()
 
-        self.scheduler, self.vae, self.unet = [diffusers.DDPMScheduler.from_pretrained('runwayml/stable-diffusion-v1-5', subfolder='scheduler'),
+        '''self.scheduler, self.vae, self.unet = [diffusers.DDPMScheduler.from_pretrained('runwayml/stable-diffusion-v1-5', subfolder='scheduler'),
                                                diffusers.AutoencoderKL.from_pretrained('runwayml/stable-diffusion-v1-5', subfolder='vae'),
                                                diffusers.UNet2DConditionModel.from_pretrained('runwayml/stable-diffusion-v1-5', subfolder='unet')]
         self.vae.requires_grad_(False)
@@ -222,7 +222,7 @@ class LlavaLlamaForCausalLM(LlamaForCausalLM):
             conv = torch.nn.Conv2d(8, self.unet.conv_in.out_channels, self.unet.conv_in.kernel_size, self.unet.conv_in.stride, self.unet.conv_in.padding)
             conv.weight.zero_()
             conv.weight[:, :4, :, :].copy_(self.unet.conv_in.weight)
-            self.unet.conv_in = conv
+            self.unet.conv_in = conv'''
 
         # Initialize weights and apply final processing
         self.post_init()
