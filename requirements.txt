@@ -1,5 +1,6 @@
 -i https://download.pytorch.org/whl/cu118
-torch==2.0
+pip install --use-mirrors torch==2.0
+pip install requests
 torchvision==0.15
 torchaudio==2.0
 sentencepiece
