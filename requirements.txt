@@ -1,5 +1,5 @@
 -i https://download.pytorch.org/whl/cu118
-pip install -i 2 torch==2.0
+torch==2.0
 pip install requests
 torchvision==0.15
 torchaudio==2.0
